@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/product")
 public class ProductController {
     @Autowired
     ProductRepository productRepository;
@@ -29,6 +29,11 @@ public class ProductController {
         return products.stream()
                 .map(productConverter::entityToResponse)
                 .collect(Collectors.toList());
+    }
+    @GetMapping("/get/{id}")
+    public  ProductResponse getProductById(@PathVariable String id){
+        Optional<ProductEntity> productEntity = productRepository.findById(id);
+        return productConverter.optionalEntityToResponse(productEntity);
     }
     @PostMapping("/create")
     public ProductResponse newProduct(@RequestBody ProductRequest productRequest) {

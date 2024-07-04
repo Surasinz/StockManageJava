@@ -10,7 +10,7 @@ import work.StockManage.repository.UserRepository;
 import work.StockManage.validator.UserValidator;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
