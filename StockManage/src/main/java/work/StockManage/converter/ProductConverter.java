@@ -5,6 +5,7 @@ import work.StockManage.model.product.ProductEntity;
 import work.StockManage.model.product.ProductRequest;
 import work.StockManage.model.product.ProductResponse;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Component
@@ -15,6 +16,8 @@ public class ProductConverter {
         productEntity.setProductImage(productRequest.getProductImage());
         productEntity.setPrice(productRequest.getPrice());
         productEntity.setQuantity(productRequest.getQuantity());
+        productEntity.setCreateAt(LocalDateTime.now());
+        productEntity.setUpdateAt(LocalDateTime.now());
         return productEntity;
     }
     public ProductResponse entityToResponse (ProductEntity productEntity){
@@ -31,6 +34,7 @@ public class ProductConverter {
         existingEntity.setProductImage(productRequest.getProductImage());
         existingEntity.setQuantity(productRequest.getQuantity());
         existingEntity.setPrice(productRequest.getPrice());
+        existingEntity.setUpdateAt(LocalDateTime.now());
         return existingEntity;
     }
     public ProductResponse optionalEntityToResponse(Optional<ProductEntity> productEntityOptional) {

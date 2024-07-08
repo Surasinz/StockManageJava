@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 public class ProductRequest {
     private String productName;
     private String productImage;
-    private Integer price;
+    private Float price;
     private Integer quantity;
 }

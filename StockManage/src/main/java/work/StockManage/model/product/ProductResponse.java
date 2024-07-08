@@ -9,6 +9,6 @@ public class ProductResponse {
     private String productName;
     private String productImage;
     private Integer quantity;
-    private Integer price;
+    private Float price;
     private String id;
 }

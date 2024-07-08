@@ -1,12 +1,12 @@
 package work.StockManage.model.product;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
 
 @Document
 @Data
@@ -18,5 +18,7 @@ public class ProductEntity {
     private String productName;
     private String productImage;
     private Integer quantity;
-    private Integer price;
+    private Float price;
+    private LocalDateTime updateAt;
+    private LocalDateTime createAt;
 }
